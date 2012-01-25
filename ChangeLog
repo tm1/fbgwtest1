@@ -1,5 +1,9 @@
 2012-01-25  testmode1  <testmode1@gmail.com>
 
+	+ sqlscripts/miscudf.sql: - added misc functions
+
+2012-01-25  testmode1  <testmode1@gmail.com>
+
 	* ChangeLog: - ****  Version: 0.0.1  ****
 
 	* BUGS, NEWS: - last updates for 0.0.1
