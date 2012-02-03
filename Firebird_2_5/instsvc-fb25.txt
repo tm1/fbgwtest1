@@ -1,0 +1,91 @@
+Простой cmd-файл подходящий для установки версий Firebird от 1.5 до 2.5 на Windows XP/2003/7/2008 (x86/64) 
+
+1) установка службы с запуском из любого каталога (с использованием instsvc.exe и поддержки instance)
+2) с запуском службы от имени простого пользователя с именем Firebird (держать можно хоть в группе "Гости")
+3) указанием необходимых для него прав на NTFS  (с использованием cacls.exe)
+4) хоть сколько разных версий параллельно в реестре  (с использованием reg.exe)
+5) open-source, feel free to modify (GPL)
+
+Особенности использования:
+
+Закинуть instsvc-fb25.cmd в подкаталог bin каталога, где установлен Firebird, 
+например "C:\Program Files (x86)\Firebird\Firebird_1_5\bin\"
+
+UPD: Хотя я тут попробовал и оказалось, что cmd-файл закидывать лучше просто
+в каталог, где установлен Firebird (и лежит файл firebird.conf),
+например "C:\Program Files (x86)\Firebird\Firebird_1_5\"
+так как тогда в реестре пропишется "правильно" путь к "instance", без ".." в пути,
+и будет срабатывать указание в firebird.conf относительных путей, например для UDF
+
+то есть если cmd-файл запускать из подкаталога bin, то в реестре будет (Windows 64-bit для Firebird 32-bit)
+
+[code=nocolor]
+HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Firebird Project\Firebird Server\Instances
+    DefaultInstance    REG_SZ    C:\Program Files (x86)\Firebird\Firebird_1_5\bin\..
+    SecondInstance    REG_SZ    C:\Program Files (x86)\Firebird\Firebird_2_5\bin\..
+[/code]
+
+а так будет, если запускать из каталога, где установлен Firebird
+
+[code=nocolor]
+HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Firebird Project\Firebird Server\Instances
+    DefaultInstance    REG_SZ    C:\Program Files (x86)\Firebird\Firebird_1_5
+    SecondInstance    REG_SZ    C:\Program Files (x86)\Firebird\Firebird_2_5
+[/code]
+
+Если использовать для параллельной работы не архивы с дистрибутивом (Firebird*.zip), а установщики (Firebird*.exe), 
+то желательно ставить сначала раннюю версию (1.5), удалить его службу (сами файлы оставить конечно), 
+а затем поздние (> 1.5) в разные каталоги конечно, также удаляя их службы, так как все они ставятся как DefaultInstance.
+
+Команда для удаления экземпляра DefaultInstance
+
+[code=nocolor]
+instsvc-fb25.cmd remove
+[/code]
+
+или
+
+[code=nocolor]
+"C:\Program Files (x86)\Firebird\Firebird_1_5\instsvc-fb25.cmd" remove DefaultInstance
+[/code]
+
+Затем установить службы, при этом надо ставить 1.5 как экземпляр по умолчанию (DefaultInstance), 
+так как он по другому сам не ставится (через instsvc.exe)
+
+вот так например суперсервер 1.5
+
+[code=nocolor]
+"C:\Program Files (x86)\Firebird\Firebird_1_5\instsvc-fb25.cmd" install-ss DefaultInstance
+[/code]
+
+затем классик 2.0
+
+[code=nocolor]
+"C:\Program Files (x86)\Firebird\Firebird_2_0\instsvc-fb25.cmd" install-cs SecondInstance
+[/code]
+
+а дальше суперклассик 2.5
+
+[code=nocolor]
+"C:\Program Files (x86)\Firebird\Firebird_2_5\instsvc-fb25.cmd" install-im ThirdInstance
+[/code]
+
+само собой не забудьте указать разные значения портов для соединений в файлах firebird.conf
+
+параметры
+
+RemoteServicePort = 3050
+RemoteServicePort = 3051
+RemoteServicePort = 3052
+
+и рекомендую для работы Event-ов
+
+RemoteAuxPort = 3060
+RemoteAuxPort = 3061
+RemoteAuxPort = 3062
+
+Для баз установите права доступа на NTFS сами, 
+пользователю под которым запускается служба (его имя в cmd-файле "Firebird", можно менять там же) 
+надо дать права записи на файл базы.
+
+Кажется "в этот раз" ничего не забыл ;)
