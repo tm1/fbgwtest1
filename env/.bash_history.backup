@@ -41,3 +41,4 @@ git branch -d release-0.0.2
 git last
 git branch -v
 git tag
+git push --recurse-submodules=check --all "origin"
