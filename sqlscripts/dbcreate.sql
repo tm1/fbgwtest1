@@ -368,12 +368,242 @@ CREATE DOMAIN DOM_YEAR
 ;
 /******************* PROCEDURES ******************/
 
+SET TERM ^ ;
+CREATE PROCEDURE IP_ERROR (
+    E Varchar(2000) )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
 /******************** TABLES **********************/
 
 /********************* VIEWS **********************/
 
 /******************* EXCEPTIONS *******************/
 
+CREATE EXCEPTION EXCP_DYN_ERR
+'???';
+CREATE EXCEPTION SYS$EXCP_DATA
+'Data deletion not allowed';
+CREATE EXCEPTION SYS$EXCP_META
+'Metadata changes not allowed';
 /******************** TRIGGERS ********************/
 
+SET TERM ^ ;
+CREATE TRIGGER SYS$TRG_CHECK_CONSTRAINTS FOR RDB$CHECK_CONSTRAINTS ACTIVE
+BEFORE INSERT OR UPDATE OR DELETE POSITION 0
+as
+begin
+  if ((current_user <> 'DEVEL001')
+    and (current_role <> 'REPLMETA')) then
+  begin
+    exception SYS$EXCP_META  'Metadata changes not allowed for user (' ||
+      current_user || '), role (' || current_role || ')';
+  end
+end^
+SET TERM ; ^
+SET TERM ^ ;
+CREATE TRIGGER SYS$TRG_DATABASE FOR RDB$DATABASE ACTIVE
+BEFORE INSERT OR UPDATE OR DELETE POSITION 0
+as
+begin
+  if ((current_user <> 'DEVEL001')
+    and (current_role <> 'REPLMETA')) then
+  begin
+    exception SYS$EXCP_META  'Metadata changes not allowed for user (' ||
+      current_user || '), role (' || current_role || ')';
+  end
+end^
+SET TERM ; ^
+SET TERM ^ ;
+CREATE TRIGGER SYS$TRG_DEPENDENCIES FOR RDB$DEPENDENCIES ACTIVE
+BEFORE INSERT OR UPDATE OR DELETE POSITION 0
+as
+begin
+  if ((current_user <> 'DEVEL001')
+    and (current_role <> 'REPLMETA')) then
+  begin
+    exception SYS$EXCP_META  'Metadata changes not allowed for user (' ||
+      current_user || '), role (' || current_role || ')';
+  end
+end^
+SET TERM ; ^
+SET TERM ^ ;
+CREATE TRIGGER SYS$TRG_EXCEPTIONS FOR RDB$EXCEPTIONS ACTIVE
+BEFORE INSERT OR DELETE POSITION 0
+as
+begin
+  if ((current_user <> 'DEVEL001')
+    and (current_role <> 'REPLMETA')) then
+  begin
+    exception SYS$EXCP_META  'Metadata changes not allowed for user (' ||
+      current_user || '), role (' || current_role || ')';
+  end
+end^
+SET TERM ; ^
+SET TERM ^ ;
+CREATE TRIGGER SYS$TRG_FIELDS FOR RDB$FIELDS ACTIVE
+BEFORE INSERT OR UPDATE OR DELETE POSITION 0
+as
+begin
+  if ((current_user <> 'DEVEL001')
+    and (current_role <> 'REPLMETA')) then
+  begin
+    exception SYS$EXCP_META  'Metadata changes not allowed for user (' ||
+      current_user || '), role (' || current_role || ')';
+  end
+end^
+SET TERM ; ^
+SET TERM ^ ;
+CREATE TRIGGER SYS$TRG_PROCEDURES FOR RDB$PROCEDURES ACTIVE
+BEFORE INSERT OR UPDATE OR DELETE POSITION 0
+as
+begin
+  if ((current_user <> 'DEVEL001')
+    and (current_role <> 'REPLMETA')) then
+  begin
+    exception SYS$EXCP_META  'Metadata changes not allowed for user (' ||
+      current_user || '), role (' || current_role || ')';
+  end
+end^
+SET TERM ; ^
+SET TERM ^ ;
+CREATE TRIGGER SYS$TRG_PROCEDURE_PARAMETERS FOR RDB$PROCEDURE_PARAMETERS ACTIVE
+BEFORE INSERT OR UPDATE OR DELETE POSITION 0
+as
+begin
+  if ((current_user <> 'DEVEL001')
+    and (current_role <> 'REPLMETA')) then
+  begin
+    exception SYS$EXCP_META  'Metadata changes not allowed for user (' ||
+      current_user || '), role (' || current_role || ')';
+  end
+end^
+SET TERM ; ^
+SET TERM ^ ;
+CREATE TRIGGER SYS$TRG_REF_CONSTRAINTS FOR RDB$REF_CONSTRAINTS ACTIVE
+BEFORE INSERT OR UPDATE OR DELETE POSITION 0
+as
+begin
+  if ((current_user <> 'DEVEL001')
+    and (current_role <> 'REPLMETA')) then
+  begin
+    exception SYS$EXCP_META  'Metadata changes not allowed for user (' ||
+      current_user || '), role (' || current_role || ')';
+  end
+end^
+SET TERM ; ^
+SET TERM ^ ;
+CREATE TRIGGER SYS$TRG_RELATIONS FOR RDB$RELATIONS ACTIVE
+BEFORE INSERT OR UPDATE OR DELETE POSITION 0
+as
+begin
+  if ((current_user <> 'DEVEL001')
+    and (current_role <> 'REPLMETA')) then
+  begin
+    exception SYS$EXCP_META  'Metadata changes not allowed for user (' ||
+      current_user || '), role (' || current_role || ')';
+  end
+end^
+SET TERM ; ^
+SET TERM ^ ;
+CREATE TRIGGER SYS$TRG_RELATION_CONSTRAINTS FOR RDB$RELATION_CONSTRAINTS ACTIVE
+BEFORE INSERT OR UPDATE OR DELETE POSITION 0
+as
+begin
+  if ((current_user <> 'DEVEL001')
+    and (current_role <> 'REPLMETA')) then
+  begin
+    exception SYS$EXCP_META  'Metadata changes not allowed for user (' ||
+      current_user || '), role (' || current_role || ')';
+  end
+end^
+SET TERM ; ^
+SET TERM ^ ;
+CREATE TRIGGER SYS$TRG_RELATION_FIELDS FOR RDB$RELATION_FIELDS ACTIVE
+BEFORE INSERT OR UPDATE OR DELETE POSITION 0
+as
+begin
+  if ((current_user <> 'DEVEL001')
+    and (current_role <> 'REPLMETA')) then
+  begin
+    exception SYS$EXCP_META  'Metadata changes not allowed for user (' ||
+      current_user || '), role (' || current_role || ')';
+  end
+end^
+SET TERM ; ^
+SET TERM ^ ;
+CREATE TRIGGER SYS$TRG_TRIGGERS FOR RDB$TRIGGERS ACTIVE
+BEFORE INSERT OR UPDATE OR DELETE POSITION 0
+as
+begin
+  if ((current_user <> 'DEVEL001')
+    and (current_role <> 'REPLMETA')) then
+  begin
+    exception SYS$EXCP_META  'Metadata changes not allowed for user (' ||
+      current_user || '), role (' || current_role || ')';
+  end
+end^
+SET TERM ; ^
+SET TERM ^ ;
+CREATE TRIGGER SYS$TRG_USER_PRIVILEGES FOR RDB$USER_PRIVILEGES ACTIVE
+BEFORE INSERT OR UPDATE OR DELETE POSITION 0
+as
+begin
+  if ((current_user <> 'DEVEL001')
+    and (current_role <> 'REPLMETA')) then
+  begin
+    exception SYS$EXCP_META  'Metadata changes not allowed for user (' ||
+      current_user || '), role (' || current_role || ')';
+  end
+end^
+SET TERM ; ^
+SET TERM ^ ;
+CREATE TRIGGER SYS$TRG_VIEW_RELATIONS FOR RDB$VIEW_RELATIONS ACTIVE
+BEFORE INSERT OR UPDATE OR DELETE POSITION 0
+as
+begin
+  if ((current_user <> 'DEVEL001')
+    and (current_role <> 'REPLMETA')) then
+  begin
+    exception SYS$EXCP_META  'Metadata changes not allowed for user (' ||
+      current_user || '), role (' || current_role || ')';
+  end
+end^
+SET TERM ; ^
+
+SET TERM ^ ;
+ALTER PROCEDURE IP_ERROR (
+    E Varchar(2000) )
+AS
+DECLARE VARIABLE EE VARCHAR(78) CHARACTER SET NONE;
+begin
+  EE = '';
+  EE = :E;
+  /* если входной параметр больше чем 78 то тут возникает ошибка
+     которая успешно обрабатывается ниже */
+  update RDB$EXCEPTIONS
+    set RDB$MESSAGE = :E
+    where RDB$EXCEPTION_NAME = 'EXCP_DYN_ERR';
+  exception EXCP_DYN_ERR;
+  /* сюда попадаем только если входной параметр Е больше 78 символов */
+  /* EE - содержит 78 символов в обрезанных от E */
+  when any do
+  begin
+    if (:EE is null) then
+      EE = 'Message text is <null>.';
+    update RDB$EXCEPTIONS
+      set RDB$MESSAGE = :EE
+      where RDB$EXCEPTION_NAME = 'EXCP_DYN_ERR';
+    exception EXCP_DYN_ERR;
+  end
+end^
+SET TERM ; ^
+
+
+GRANT EXECUTE
+ ON PROCEDURE IP_ERROR TO  DEVEL001;
+
+GRANT EXECUTE
+ ON PROCEDURE IP_ERROR TO  SYSDBA;
 
