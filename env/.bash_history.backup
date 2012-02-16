@@ -1,0 +1,43 @@
+ls -laG ~
+uname -a
+git status
+git log
+git last
+echo "2012-02-16  testmode1  <testmode1@gmail.com>" >> ChangeLog
+git add ChangeLog
+git commit -a -m "last updates for 0.0.1"
+git checkout -b release-0.0.1 develop
+echo -n "0.0.1" > version
+git add version
+git commit -a -m "Bumped version number to 0.0.1"
+git checkout master
+git merge --no-ff release-0.0.1
+git tag -a 0.0.1
+git checkout develop
+git merge --no-ff release-0.0.1
+git branch -d release-0.0.1
+git last
+git status
+git add ChangeLog
+git status
+git commit -a -m "last updates for 0.0.2"
+git checkout -b release-0.0.2 develop
+echo -n "0.0.2" > version
+cat version
+git add version
+git commit -a -m "Bumped version number to 0.0.2"
+git checkout master
+git last
+cat version
+git merge --no-ff release-0.0.2
+cat version
+git tag
+git branch -v
+git tag
+git tag -a 0.0.2
+git checkout develop
+git merge --no-ff release-0.0.2
+git branch -d release-0.0.2
+git last
+git branch -v
+git tag
