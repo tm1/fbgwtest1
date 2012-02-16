@@ -1,0 +1,19 @@
+# commandline editor bindings
+# use this lines in ~/.inputrc for Unix
+# -- BOF
+# "\e[A": history-search-backward
+# "\e[B": history-search-forward
+# "\eOA": history-search-backward
+# "\eOB": history-search-forward
+# -- EOF --
+# use this lines in ~/.inputrc gor CygWin
+# -- BOF --
+# "\M-OA": history-search-backward
+# "\M-[A": history-search-backward
+# "\M-OB": history-search-forward
+# "\M-[B": history-search-forward
+# -- EOF
+# just show bindings
+bind -q history-search-backward
+bind -q history-search-forward
+

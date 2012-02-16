@@ -1,0 +1,15 @@
+# --------
+# git config --add alias.nffmerge 'merge --no-ff'
+# git config --add alias.last 'cat-file commit HEAD'
+# --------
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+	hideDotFiles = dotGitOnly
+[alias]
+	nffmerge = merge --no-ff
+	last = cat-file commit HEAD

@@ -1,0 +1,9 @@
+# commandline editor bindings
+# use this lines in ~/.inputrc gor CygWin
+# -- BOF --
+"\M-OA": history-search-backward
+"\M-[A": history-search-backward
+"\M-OB": history-search-forward
+"\M-[B": history-search-forward
+# -- EOF --
+

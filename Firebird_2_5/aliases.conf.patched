@@ -1,0 +1,12 @@
+# 
+# List of known database aliases 
+# ------------------------------ 
+# 
+# Examples: 
+# 
+#   dummy = c:\data\dummy.fdb 
+#  
+
+rho = d:\fb_data\rho.fdb
+
+rho-current = d:\fb_data\rho-current.fdb

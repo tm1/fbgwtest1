@@ -1,0 +1,224 @@
+Connecting to server localhost...
+Database backup started 19:49:28
+gbak:readied database E:\_WorkDir_\projects\fbgwtest1\db\FBGWTEST1.FDB for backup 
+gbak:creating file fbgwtest1.fbk 
+gbak:starting transaction 
+gbak:database E:\_WorkDir_\projects\fbgwtest1\db\FBGWTEST1.FDB has a page size of 16384 bytes. 
+gbak:writing domains 
+gbak:    writing domain DOM_BIGINT_ABOVE_ZERO 
+gbak:    writing domain DOM_BIGINT_ABOVE_ZERO_DEF 
+gbak:    writing domain DOM_BIGINT_ABOVE_ZERO_NUL 
+gbak:    writing domain DOM_BIGINT_POSITIVE_DEF 
+gbak:    writing domain DOM_BOOLEAN_F 
+gbak:    writing domain DOM_BOOLEAN_T 
+gbak:    writing domain DOM_DATE 
+gbak:    writing domain DOM_INT_ABOVE_ZERO 
+gbak:    writing domain DOM_INT_ABOVE_ZERO_DEF 
+gbak:    writing domain DOM_INT_ABOVE_ZERO_NUL 
+gbak:    writing domain DOM_INT_PERCENT 
+gbak:    writing domain DOM_INT_POSITIVE 
+gbak:    writing domain DOM_INT_POSITIVE_DEF 
+gbak:    writing domain DOM_INT_POSITIVE_NUL 
+gbak:    writing domain DOM_REASON 
+gbak:    writing domain DOM_SESSION 
+gbak:    writing domain DOM_STRING_COMMENT 
+gbak:    writing domain DOM_STRING_COMMENT_DEF 
+gbak:    writing domain DOM_TIMESTAMP_DEF 
+gbak:    writing domain DOM_TIMESTAMP_NUL 
+gbak:    writing domain DOM_TIME_HOURS 
+gbak:    writing domain DOM_TIME_MINUTES 
+gbak:    writing domain DOM_TIME_SECONDS 
+gbak:    writing domain DOM_YEAR 
+gbak:    writing domain RDB$1 
+gbak:writing shadow files 
+gbak:writing character sets 
+gbak:writing collations 
+gbak:writing functions 
+gbak:    writing function ADDDAY 
+gbak:    writing argument for function ADDDAY 
+gbak:    writing argument for function ADDDAY 
+gbak:    writing argument for function ADDDAY 
+gbak:    writing function ADDDAY2 
+gbak:    writing argument for function ADDDAY2 
+gbak:    writing argument for function ADDDAY2 
+gbak:    writing argument for function ADDDAY2 
+gbak:    writing function ADDHOUR 
+gbak:    writing argument for function ADDHOUR 
+gbak:    writing argument for function ADDHOUR 
+gbak:    writing argument for function ADDHOUR 
+gbak:    writing function ADDMILLISECOND 
+gbak:    writing argument for function ADDMILLISECOND 
+gbak:    writing argument for function ADDMILLISECOND 
+gbak:    writing argument for function ADDMILLISECOND 
+gbak:    writing function ADDMINUTE 
+gbak:    writing argument for function ADDMINUTE 
+gbak:    writing argument for function ADDMINUTE 
+gbak:    writing argument for function ADDMINUTE 
+gbak:    writing function ADDMONTH 
+gbak:    writing argument for function ADDMONTH 
+gbak:    writing argument for function ADDMONTH 
+gbak:    writing argument for function ADDMONTH 
+gbak:    writing function ADDSECOND 
+gbak:    writing argument for function ADDSECOND 
+gbak:    writing argument for function ADDSECOND 
+gbak:    writing argument for function ADDSECOND 
+gbak:    writing function ADDWEEK 
+gbak:    writing argument for function ADDWEEK 
+gbak:    writing argument for function ADDWEEK 
+gbak:    writing argument for function ADDWEEK 
+gbak:    writing function ADDYEAR 
+gbak:    writing argument for function ADDYEAR 
+gbak:    writing argument for function ADDYEAR 
+gbak:    writing argument for function ADDYEAR 
+gbak:    writing function DIV 
+gbak:    writing argument for function DIV 
+gbak:    writing argument for function DIV 
+gbak:    writing argument for function DIV 
+gbak:    writing function DOW 
+gbak:    writing argument for function DOW 
+gbak:    writing argument for function DOW 
+gbak:    writing function DPOWER 
+gbak:    writing argument for function DPOWER 
+gbak:    writing argument for function DPOWER 
+gbak:    writing argument for function DPOWER 
+gbak:    writing function FN_BLOBBINCMP 
+gbak:    writing argument for function FN_BLOBBINCMP 
+gbak:    writing argument for function FN_BLOBBINCMP 
+gbak:    writing argument for function FN_BLOBBINCMP 
+gbak:    writing function FN_CRLF 
+gbak:    writing argument for function FN_CRLF 
+gbak:    writing function FN_GETRANDOM 
+gbak:    writing argument for function FN_GETRANDOM 
+gbak:    writing argument for function FN_GETRANDOM 
+gbak:    writing function FN_INITRANDOM 
+gbak:    writing argument for function FN_INITRANDOM 
+gbak:    writing function FN_LRTRIM 
+gbak:    writing argument for function FN_LRTRIM 
+gbak:    writing argument for function FN_LRTRIM 
+gbak:    writing function FN_MD5SUM 
+gbak:    writing argument for function FN_MD5SUM 
+gbak:    writing argument for function FN_MD5SUM 
+gbak:    writing function FN_RANDOMSTR 
+gbak:    writing argument for function FN_RANDOMSTR 
+gbak:    writing argument for function FN_RANDOMSTR 
+gbak:    writing argument for function FN_RANDOMSTR 
+gbak:    writing function FN_RANDOMSTRE 
+gbak:    writing argument for function FN_RANDOMSTRE 
+gbak:    writing argument for function FN_RANDOMSTRE 
+gbak:    writing argument for function FN_RANDOMSTRE 
+gbak:    writing function FN_SETRANDSEED 
+gbak:    writing argument for function FN_SETRANDSEED 
+gbak:    writing argument for function FN_SETRANDSEED 
+gbak:    writing function FN_SHA1SUM 
+gbak:    writing argument for function FN_SHA1SUM 
+gbak:    writing argument for function FN_SHA1SUM 
+gbak:    writing function I64ROUND 
+gbak:    writing argument for function I64ROUND 
+gbak:    writing argument for function I64ROUND 
+gbak:    writing function I64TRUNCATE 
+gbak:    writing argument for function I64TRUNCATE 
+gbak:    writing argument for function I64TRUNCATE 
+gbak:    writing function ISLEAPYEAR 
+gbak:    writing argument for function ISLEAPYEAR 
+gbak:    writing argument for function ISLEAPYEAR 
+gbak:    writing function LTRIM 
+gbak:    writing argument for function LTRIM 
+gbak:    writing argument for function LTRIM 
+gbak:    writing function ROUND 
+gbak:    writing argument for function ROUND 
+gbak:    writing argument for function ROUND 
+gbak:    writing function RTRIM 
+gbak:    writing argument for function RTRIM 
+gbak:    writing argument for function RTRIM 
+gbak:    writing function SDOW 
+gbak:    writing argument for function SDOW 
+gbak:    writing argument for function SDOW 
+gbak:    writing function SRAND 
+gbak:    writing argument for function SRAND 
+gbak:    writing function SRIGHT 
+gbak:    writing argument for function SRIGHT 
+gbak:    writing argument for function SRIGHT 
+gbak:    writing argument for function SRIGHT 
+gbak:    writing function STRING2BLOB 
+gbak:    writing argument for function STRING2BLOB 
+gbak:    writing argument for function STRING2BLOB 
+gbak:    writing function STRLEN 
+gbak:    writing argument for function STRLEN 
+gbak:    writing argument for function STRLEN 
+gbak:    writing function SUBSTR 
+gbak:    writing argument for function SUBSTR 
+gbak:    writing argument for function SUBSTR 
+gbak:    writing argument for function SUBSTR 
+gbak:    writing argument for function SUBSTR 
+gbak:    writing function SUBSTRLEN 
+gbak:    writing argument for function SUBSTRLEN 
+gbak:    writing argument for function SUBSTRLEN 
+gbak:    writing argument for function SUBSTRLEN 
+gbak:    writing argument for function SUBSTRLEN 
+gbak:    writing function TRUNCATE 
+gbak:    writing argument for function TRUNCATE 
+gbak:    writing argument for function TRUNCATE 
+gbak:    writing function UDF_FRAC 
+gbak:    writing argument for function UDF_FRAC 
+gbak:    writing argument for function UDF_FRAC 
+gbak:writing tables 
+gbak:writing types 
+gbak:writing filters 
+gbak:writing id generators 
+gbak:writing stored procedures 
+gbak:writing stored procedure IP_ERROR 
+gbak:writing parameter E for stored procedure 
+gbak:writing exceptions 
+gbak:writing exception EXCP_DYN_ERR 
+gbak:writing exception SYS$EXCP_DATA 
+gbak:writing exception SYS$EXCP_META 
+gbak:writing triggers 
+gbak:    writing trigger SYS$TRG_CHECK_CONSTRAINTS 
+gbak:    writing trigger SYS$TRG_DATABASE 
+gbak:    writing trigger SYS$TRG_DEPENDENCIES 
+gbak:    writing trigger SYS$TRG_EXCEPTIONS 
+gbak:    writing trigger SYS$TRG_FIELDS 
+gbak:    writing trigger SYS$TRG_PROCEDURES 
+gbak:    writing trigger SYS$TRG_PROCEDURE_PARAMETERS 
+gbak:    writing trigger SYS$TRG_REF_CONSTRAINTS 
+gbak:    writing trigger SYS$TRG_RELATIONS 
+gbak:    writing trigger SYS$TRG_RELATION_CONSTRAINTS 
+gbak:    writing trigger SYS$TRG_RELATION_FIELDS 
+gbak:    writing trigger SYS$TRG_TRIGGERS 
+gbak:    writing trigger SYS$TRG_USER_PRIVILEGES 
+gbak:    writing trigger SYS$TRG_VIEW_RELATIONS 
+gbak:writing trigger messages 
+gbak:    writing privilege for user DEVEL001 
+gbak:    writing privilege for user DEVEL001 
+gbak:    writing privilege for user DEVEL001 
+gbak:    writing privilege for user DEVEL001 
+gbak:    writing privilege for user DEVEL001 
+gbak:    writing privilege for user PUBLIC 
+gbak:    writing privilege for user DEVEL001 
+gbak:    writing privilege for user DEVEL001 
+gbak:    writing privilege for user DEVEL001 
+gbak:    writing privilege for user DEVEL001 
+gbak:    writing privilege for user DEVEL001 
+gbak:    writing privilege for user PUBLIC 
+gbak:    writing privilege for user DEVEL001 
+gbak:    writing privilege for user DEVEL001 
+gbak:    writing privilege for user DEVEL001 
+gbak:    writing privilege for user DEVEL001 
+gbak:    writing privilege for user DEVEL001 
+gbak:    writing privilege for user PUBLIC 
+gbak:    writing privilege for user DEVEL001 
+gbak:    writing privilege for user SYSDBA 
+gbak:writing table constraints 
+gbak:writing referential constraints 
+gbak:writing check constraints 
+gbak:writing SQL roles 
+gbak:    writing SQL role: ADMINISTRATOR 
+gbak:    writing SQL role: CASHIER 
+gbak:    writing SQL role: CLEANER 
+gbak:    writing SQL role: ENTRANCE 
+gbak:    writing SQL role: KIOSK 
+gbak:    writing SQL role: REPLDATA 
+gbak:    writing SQL role: REPLMETA 
+gbak:writing names mapping 
+gbak:closing file, committing, and finishing. 19456 bytes written 
+Database backup finished 19:49:29

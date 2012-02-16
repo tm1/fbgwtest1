@@ -1,0 +1,12 @@
+# 
+# List of known database aliases 
+# ------------------------------ 
+# 
+# Examples: 
+# 
+#   dummy = c:\data\dummy.fdb 
+#  
+
+kappa = d:\fb_data\kappa.fdb
+
+kappa-current = d:\fb_data\kappa-current.fdb
