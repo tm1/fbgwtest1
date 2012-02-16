@@ -244,6 +244,128 @@ MODULE_NAME 'ib_udf';
 
 /******************** DOMAINS *********************/
 
+CREATE DOMAIN DOM_BIGINT_ABOVE_ZERO
+ AS Bigint
+ NOT NULL
+ CHECK(value > 0)
+;
+CREATE DOMAIN DOM_BIGINT_ABOVE_ZERO_DEF
+ AS Bigint
+ DEFAULT 1
+ NOT NULL
+ CHECK(value > 0)
+;
+CREATE DOMAIN DOM_BIGINT_ABOVE_ZERO_NUL
+ AS Bigint
+ NOT NULL
+ CHECK((value > 0) or (value is null))
+;
+CREATE DOMAIN DOM_BIGINT_POSITIVE_DEF
+ AS Bigint
+ DEFAULT 0
+ NOT NULL
+ check (value >= 0)
+;
+CREATE DOMAIN DOM_BOOLEAN_F
+ AS Smallint
+ DEFAULT 0
+ NOT NULL
+ CHECK(value in (0,1))
+;
+CREATE DOMAIN DOM_BOOLEAN_T
+ AS Smallint
+ DEFAULT 1
+ NOT NULL
+ CHECK(value in (0,1))
+;
+CREATE DOMAIN DOM_DATE
+ AS Date
+ DEFAULT 'now'
+ NOT NULL
+;
+CREATE DOMAIN DOM_INT_ABOVE_ZERO
+ AS Integer
+ NOT NULL
+ CHECK(value > 0)
+;
+CREATE DOMAIN DOM_INT_ABOVE_ZERO_DEF
+ AS Integer
+ DEFAULT 1
+ NOT NULL
+ CHECK(value > 0)
+;
+CREATE DOMAIN DOM_INT_ABOVE_ZERO_NUL
+ AS Integer
+ CHECK((value > 0) or (value is null))
+;
+CREATE DOMAIN DOM_INT_PERCENT
+ AS Integer
+ NOT NULL
+ CHECK((value >= 0) and (value <= 100))
+;
+CREATE DOMAIN DOM_INT_POSITIVE
+ AS Integer
+ NOT NULL
+ CHECK(value >= 0)
+;
+CREATE DOMAIN DOM_INT_POSITIVE_DEF
+ AS Integer
+ DEFAULT 0
+ NOT NULL
+ CHECK(value >= 0)
+;
+CREATE DOMAIN DOM_INT_POSITIVE_NUL
+ AS Integer
+ CHECK((value >= 0) or (value is null))
+;
+CREATE DOMAIN DOM_REASON
+ AS Smallint
+ check ((value is null) or (value in (0,1,2,3)))
+;
+CREATE DOMAIN DOM_SESSION
+ AS Bigint
+ NOT NULL
+ CHECK(value > 0)
+;
+CREATE DOMAIN DOM_STRING_COMMENT
+ AS Varchar(4000)
+ NOT NULL
+ CHECK(value <> '')
+ COLLATE UTF8;
+CREATE DOMAIN DOM_STRING_COMMENT_DEF
+ AS Varchar(4000)
+ DEFAULT 'no comments'
+ NOT NULL
+ CHECK(value <> '')
+ COLLATE UTF8;
+CREATE DOMAIN DOM_TIMESTAMP_DEF
+ AS Timestamp
+ DEFAULT 'now'
+ NOT NULL
+;
+CREATE DOMAIN DOM_TIMESTAMP_NUL
+ AS Timestamp
+;
+CREATE DOMAIN DOM_TIME_HOURS
+ AS Integer
+ NOT NULL
+ CHECK(value >= 0 and value <= 23)
+;
+CREATE DOMAIN DOM_TIME_MINUTES
+ AS Integer
+ NOT NULL
+ CHECK(value >= 0 and value <= 59)
+;
+CREATE DOMAIN DOM_TIME_SECONDS
+ AS Integer
+ NOT NULL
+ CHECK(value >= 0 and value <= 59)
+;
+CREATE DOMAIN DOM_YEAR
+ AS Smallint
+ NOT NULL
+ CHECK((value >= 1800) and (value <= 9999))
+;
 /******************* PROCEDURES ******************/
 
 /******************** TABLES **********************/
