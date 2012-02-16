@@ -1,3 +1,15 @@
+2012-02-16  testmode1  <testmode1@gmail.com>
+
+	* ChangeLog: - ****  Version: 0.0.2  ****
+
+	* BUGS, NEWS: - last updates for 0.0.2
+
+2012-02-16  testmode1  <testmode1@gmail.com>
+
+	* Changed some declarations to CHARACTER SET NONE
+
+	* Added domains, exceptions and tricks to metadata
+
 2012-01-25  testmode1  <testmode1@gmail.com>
 
 	+ sqlscripts/miscudf.sql: - added misc functions
