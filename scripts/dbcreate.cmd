@@ -33,11 +33,22 @@ if ["%fb_isql%"]==[""]   echo [error]   Can not find Firebird isql. && goto l_ex
 cd /d "%db_dir%" || echo Cannot change dir to "%db_dir%" && goto l_exit
 cd /d "%~dp0"
 
-@echo on
-if not ["%fb_isql%"]==[""]   if exist "%sql_script%"   if not exist "%db_path%"   cd /d "%db_dir%" && "%fb_isql%" -z -u sysdba -password masterkey -input "%sql_script%"
-cd /d "%~dp0"
-@echo off
+rem set db_user=sysdba
+rem set db_pass=masterkey
 
+set db_user=devel001
+set db_pass=primarykey
+
+echo [info]   db_user is "%db_user%"
+rem echo [info]   db_pass is "%db_pass%"
+
+rem @echo on
+if not ["%fb_isql%"]==[""]   if exist "%sql_script%"   if not exist "%db_path%"   cd /d "%db_dir%" && "%fb_isql%" -z -u %db_user% -password %db_pass% -input "%sql_script%"
+cd /d "%~dp0"
+rem @echo off
+
+set dp_pass=
+set db_user=
 set db_path=
 set db_name=
 set db_dir=
