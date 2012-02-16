@@ -41,4 +41,11 @@ git branch -d release-0.0.2
 git last
 git branch -v
 git tag
+git pull --rebase "origin"
 git push --recurse-submodules=check --all "origin"
+git stash
+git stash apply stash@{0}
+git commit -a -m "bash history changes"
+git last
+git reset --soft HEAD^
+git last
